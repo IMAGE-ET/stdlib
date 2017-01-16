@@ -13,13 +13,13 @@ lts() {
 }
 
 slurp() {
-  awk '
-  BEGIN {
-    RS = ""
-    getline < "-"
-    print > ARGV[1]
-  }
-  ' "$1"
+  awk 'BEGIN {RS = ""; getline < "-"; print > ARGV[1]}' "$1"
+}
+
+wrap() {
+  awk '{while (NF) {y = NF - 1 ? index($0, FS) : length + 1; q += y
+  if (q > 79) {z = z RS; q = y - 1} else if (z) z = z FS
+  z = z substr($0, 1, y - 1); $0 = substr($0, y + 1)} print z}' "$1"
 }
 
 xtrace() {
