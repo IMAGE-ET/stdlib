@@ -45,3 +45,21 @@ function wrap(text,   q, y, z) {
   }
   return z
 }
+
+function xtrace(arr,   br, ch, de, ec, pa, qu, ro) {
+  br = "\47"
+  for (ch in arr)
+    split(ch, de, SUBSEP)
+  for (ch in de) {
+    ec = split(de[ch], pa, br)
+    pa[1]
+    for (qu in pa) {
+      ro = ro \
+      (!ec || pa[qu] ~ /[^[:alnum:]%+,./:=@_-]/ ? br pa[qu] br : pa[qu]) \
+      (qu < ec ? "\\" br : "")
+    }
+    ro = ro FS
+  }
+  printf "\33[36m%s\33[m\n", ro
+  system(ro)
+}
