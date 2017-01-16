@@ -35,7 +35,7 @@ function wrap(text,   q, y, z) {
   while (text) {
     q = match(text, /( |$)/)
     y += q
-    if (y > 79) {
+    if (y > 80) {
       z = z RS
       y = q - 1
     }
