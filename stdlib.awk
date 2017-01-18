@@ -33,7 +33,7 @@ function quote(str,   d, m, x, y, z) {
 
 function wrap(text,   q, y, z) {
   while (text) {
-    q = match(text, /( |$)/)
+    q = match(text, / |$/)
     y += q
     if (y > 80) {
       z = z RS
