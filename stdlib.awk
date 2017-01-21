@@ -23,6 +23,10 @@ function decodeURIComponent(encodedURI,   g, q, y, z) {
   return z
 }
 
+function exists(file) {
+  return getline < file < 0 ? 0 : 1
+}
+
 function quote(str,   d, m, x, y, z) {
   d = "\47"
   m = split(str, x, d)
