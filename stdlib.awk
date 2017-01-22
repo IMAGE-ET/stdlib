@@ -1,14 +1,14 @@
 #!/usr/bin/awk -f
 
-function asrt(b,   x, y, z) {
-  for (x in b) {
-    y = b[x]
+function insertion_sort(arr,   x, y, z) {
+  for (x in arr) {
+    y = arr[x]
     z = x - 1
-    while (z && b[z] > y) {
-      b[z + 1] = b[z]
+    while (z && arr[z] > y) {
+      arr[z + 1] = arr[z]
       z--
     }
-    b[z + 1] = y
+    arr[z + 1] = y
   }
 }
 
