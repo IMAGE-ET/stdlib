@@ -23,6 +23,14 @@ function decodeURIComponent(encodedURI,   g, q, y, z) {
   return z
 }
 
+function encodeURIComponent(str,   g, q, y, z) {
+  while (g++ < 125)
+    q[sprintf("%c", g)] = g
+  while (g = substr(str, ++y, 1))
+    z = z (g ~ /[[:alnum:]_.!~*\47()-]/ ? g : sprintf("%%%02X", q[g]))
+  return z
+}
+
 function exists(file) {
   return getline < file < 0 ? 0 : 1
 }
