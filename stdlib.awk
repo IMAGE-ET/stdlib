@@ -1,5 +1,10 @@
 #!/usr/bin/awk -f
 
+function ceil(x,   y) {
+  y = int(x)
+  return y < x ? y + 1 : y
+}
+
 function insertion_sort(arr,   x, y, z) {
   for (x in arr) {
     y = arr[x]
