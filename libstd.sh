@@ -1,13 +1,9 @@
 encodeURIComponent() {
-  awk '
-  BEGIN {
-    while (y++ < 125)
-      z[sprintf("%c", y)] = y
-    while (y = substr(ARGV[1], ++j, 1))
-      q = y ~ /[[:alnum:]_.!~*\47()-]/ ? q y : q sprintf("%%%02X", z[y])
-    print q
-  }
-  ' "$1"
+  awk -f/usr/share/awk/libstd.awk -f- "$1" <<'eof'
+BEGIN {
+  print encodeURIComponent(ARGV[1])
+}
+eof
 }
 
 lts() {
