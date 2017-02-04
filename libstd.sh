@@ -1,5 +1,5 @@
 encodeURIComponent() {
-  awk -f/usr/share/awk/libstd.awk -f- "$1" <<'eof'
+  stdlib awk - "$1" <<'eof'
 BEGIN {
   print encodeURIComponent(ARGV[1])
 }
