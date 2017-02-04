@@ -1,5 +1,10 @@
 #!/bin/dash -e
 # -*- sh -*-
+if [ "$#" = 0 ]
+then
+  echo 'StdLib version 1.0.0'
+  exit
+fi
 x=$1 y=$2
 shift 2
 case $x in
