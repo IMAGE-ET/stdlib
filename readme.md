@@ -21,12 +21,15 @@ Shell script:
 
 ~~~sh
 #!/usr/local/bin/stdlib sh
+xtrace echo 'hello world'
 ~~~
 
 Or you can source the library directly:
 
 ~~~sh
+#!/bin/sh
 . /usr/share/sh/libstd.sh
+xtrace echo 'hello world'
 ~~~
 
 Links
