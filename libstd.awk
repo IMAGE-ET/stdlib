@@ -70,7 +70,7 @@ function xtrace(arr,   br, ch, de, ec, pa, qu, ro) {
     pa[1]
     for (qu in pa) {
       ro = ro \
-      (!ec || pa[qu] ~ /[^[:alnum:]%+,./:=@_-]/ ? br pa[qu] br : pa[qu]) \
+      (!ec || pa[qu] ~ "[^[:alnum:]%+,./:=@_-]" ? br pa[qu] br : pa[qu]) \
       (qu < ec ? "\\" br : "")
     }
     ro = ro FS

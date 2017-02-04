@@ -65,7 +65,7 @@ xtrace() {
       x = split(ARGV[q], y, d)
       y[1]
       for (z in y) {
-        printf "%s%s", !x || y[z] ~ /[^[:alnum:]%+,./:=@_-]/ ? d y[z] d : y[z],
+        printf "%s%s", !x || y[z] ~ "[^[:alnum:]%+,./:=@_-]" ? d y[z] d : y[z],
         z < x ? "\\" d : ""
       }
       printf q == ARGC - 1 ? "\33[m\n" : FS
