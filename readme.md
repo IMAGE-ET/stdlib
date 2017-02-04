@@ -1,6 +1,6 @@
-Shell standard library
-======================
-The shell standard library or stdlib is a library for POSIX shell scripts.
+StdLib
+======
+POSIX standard library for Awk and shell scripts
 
 Examples
 ---------------------
