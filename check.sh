@@ -1,5 +1,4 @@
-#!/bin/dash -e
-. stdlib.sh
+#!/usr/local/bin/stdlib sh
 f=$(mktemp)
 seq 10 > "$f"
 cat "$f"
