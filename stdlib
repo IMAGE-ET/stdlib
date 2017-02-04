@@ -1,0 +1,9 @@
+#!/bin/dash -e
+case $1 in
+awk)
+  awk -f /usr/share/awk/libstd.awk -f "$2"
+;;
+sh)
+  . /usr/share/sh/libstd.sh
+  . "$2"
+esac
