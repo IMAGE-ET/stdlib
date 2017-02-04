@@ -1,4 +1,5 @@
 #!/bin/dash -e
+# -*- sh -*-
 z=$2
 case $1 in
 awk)
