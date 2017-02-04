@@ -1,9 +1,12 @@
 #!/bin/dash -e
+z=$2
 case $1 in
 awk)
-  awk -f /usr/share/awk/libstd.awk -f "$2"
+  shift 2
+  awk -f /usr/share/awk/libstd.awk -f "$z" "$@"
 ;;
 sh)
+  shift 2
   . /usr/share/sh/libstd.sh
-  . "$2"
+  . "$z" "$@"
 esac
