@@ -1,13 +1,19 @@
-
 Shell standard library
 ======================
 The shell standard library or stdlib is a library for POSIX shell scripts.
 
-Example
--------
+Examples
+---------------------
+Use with Awk scripts:
 
+~~~sh
+#!/usr/local/bin/stdlib awk
 ~~~
-. stdlib.sh
+
+Use with shell scripts:
+
+~~~sh
+#!/usr/local/bin/stdlib sh
 ~~~
 
 Links
@@ -16,6 +22,10 @@ Links
 - [POSIX Shell libraries and namespaces][wh]
 - [C standard library][ya]
 - [Standard library][zu]
+
+Author
+------------
+Steven Penny
 
 [wh]:http://hyperpolyglot.org/shell#libraries-namespaces
 [xr]:http://unix.stackexchange.com/q/297792#297805
