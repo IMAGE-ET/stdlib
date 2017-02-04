@@ -1,3 +1,9 @@
+function array_join(arr, separator,   q, x) {
+  for (q in arr)
+    x = x ? x separator arr[q] : arr[q]
+  return x
+}
+
 function ceil(x,   y) {
   y = int(x)
   return y < x ? y + 1 : y
