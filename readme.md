@@ -4,16 +4,29 @@ POSIX standard library for Awk and shell scripts
 
 Examples
 ---------------------
-Use with Awk scripts:
+Awk script:
 
-~~~sh
+~~~awk
 #!/usr/local/bin/stdlib awk
+BEGIN {print ceil(2.1)}
 ~~~
 
-Use with shell scripts:
+Awk command line:
+
+~~~
+awk -f /usr/share/awk/libstd.awk -f ceil.awk
+~~~
+
+Shell script:
 
 ~~~sh
 #!/usr/local/bin/stdlib sh
+~~~
+
+Or you can source the library directly:
+
+~~~sh
+. /usr/share/sh/libstd.sh
 ~~~
 
 Links
