@@ -1,13 +1,12 @@
 #!/bin/dash -e
 # -*- sh -*-
-z=$2
-case $1 in
+x=$1 y=$2
+shift 2
+case $x in
 awk)
-  shift 2
-  awk -f /usr/share/awk/libstd.awk -f "$z" "$@"
+  awk -f /usr/share/awk/libstd.awk -f "$y" "$@"
 ;;
 sh)
-  shift 2
   . /usr/share/sh/libstd.sh
-  . "$z" "$@"
+  . "$y" "$@"
 esac
