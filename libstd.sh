@@ -32,14 +32,6 @@ slurp() {
   ' "$1"
 }
 
-wrap() {
-  awk -f/usr/share/awk/libstd.awk -f- "$1" <<'eof'
-BEGIN {
-  print wrap(ARGV[1])
-}
-eof
-}
-
 xtrace() {
   awk '
   BEGIN {
