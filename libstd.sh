@@ -1,5 +1,3 @@
-#!/bin/dash
-
 encodeURIComponent() {
   awk 'BEGIN {while (y++ < 125) z[sprintf("%c", y)] = y
   while (y = substr(ARGV[1], ++j, 1))

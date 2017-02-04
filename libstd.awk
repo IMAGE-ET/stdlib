@@ -1,5 +1,3 @@
-#!/usr/bin/awk -f
-
 function ceil(x,   y) {
   y = int(x)
   return y < x ? y + 1 : y
