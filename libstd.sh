@@ -33,23 +33,11 @@ slurp() {
 }
 
 wrap() {
-  awk '
-  {
-    while (NF) {
-      y = NF - 1 ? index($0, FS) : length + 1
-      q += y
-      if (q > 79) {
-        z = z RS
-        q = y - 1
-      }
-      else if (z)
-        z = z FS
-      z = z substr($0, 1, y - 1)
-      $0 = substr($0, y + 1)
-    }
-    print z
-  }
-  ' "$1"
+  awk -f/usr/share/awk/libstd.awk -f- "$1" <<'eof'
+BEGIN {
+  print wrap(ARGV[1])
+}
+eof
 }
 
 xtrace() {
