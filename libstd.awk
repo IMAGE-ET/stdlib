@@ -58,13 +58,15 @@ function quote(str,   d, m, x, y, z) {
 function wrap(text,   q, y, z) {
   while (text) {
     q = match(text, / |$/)
-    y += q
+    y += q - 1
     if (y > 80) {
-      z = z RS
+      z = z "\n"
       y = q - 1
     }
-    else if (z)
+    else if (z) {
       z = z " "
+      y++
+    }
     z = z substr(text, 1, q - 1)
     text = substr(text, q + 1)
   }
