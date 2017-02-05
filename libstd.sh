@@ -6,14 +6,6 @@ BEGIN {
 eof
 }
 
-encodeURIComponent() {
-  stdlib awk - "$1" <<'eof'
-BEGIN {
-  print encodeURIComponent(ARGV[1])
-}
-eof
-}
-
 lts() {
   awk '
   {
