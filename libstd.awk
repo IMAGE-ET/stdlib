@@ -82,6 +82,6 @@ function xtrace(arr,   b, d, k, q, w, z) {
     }
     z = z FS
   }
-  printf "\33[36m%s\33[m\n", z
+  printf "\33[36m%s\33[m\n", wrap(z)
   system(z)
 }
