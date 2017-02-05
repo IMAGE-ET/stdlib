@@ -71,20 +71,17 @@ function wrap(text,   q, y, z) {
   return z
 }
 
-function xtrace(arr,   br, ch, de, ec, pa, qu, ro) {
-  br = "\47"
-  for (ch in arr)
-    split(ch, de, SUBSEP)
-  for (ch in de) {
-    ec = split(de[ch], pa, br)
-    pa[1]
-    for (qu in pa) {
-      ro = ro \
-      (!ec || pa[qu] ~ "[^[:alnum:]%+,./:=@_-]" ? br pa[qu] br : pa[qu]) \
-      (qu < ec ? "\\" br : "")
+function xtrace(arr,   b, d, k, q, w, z) {
+  b = "\47"
+  for (d in arr) {
+    k = split(arr[d], q, b)
+    q[1]
+    for (w in q) {
+      z = z (!k || q[w] ~ "[^[:alnum:]%+,./:=@_-]" ? b q[w] b : q[w]) \
+      (w < k ? "\\" b : "")
     }
-    ro = ro FS
+    z = z FS
   }
-  printf "\33[36m%s\33[m\n", ro
-  system(ro)
+  printf "\33[36m%s\33[m\n", z
+  system(z)
 }
