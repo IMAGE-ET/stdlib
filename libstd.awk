@@ -64,7 +64,7 @@ function wrap(text,   q, y, z) {
       y = q - 1
     }
     else if (z)
-      z = z FS
+      z = z " "
     z = z substr(text, 1, q - 1)
     text = substr(text, q + 1)
   }
@@ -80,7 +80,7 @@ function xtrace(arr,   b, d, k, q, w, z) {
       z = z (!k || q[w] ~ "[^[:alnum:]%+,./:=@_-]" ? b q[w] b : q[w]) \
       (w < k ? "\\" b : "")
     }
-    z = z FS
+    z = z " "
   }
   printf "\33[36m%s\33[m\n", wrap(z)
   system(z)
