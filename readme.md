@@ -4,32 +4,92 @@ POSIX standard library for Awk and shell scripts
 
 Examples
 ---------------------
-Awk script:
+Shell command line:
 
-~~~awk
-#!/usr/local/bin/stdlib awk
-BEGIN {print ceil(2.1)}
+~~~c
+$ stdlib version
+1.0.0
+
+$ . stdlib sh
+
+$ ceil 2.1
+3
 ~~~
 
-Awk command line:
+~~~c
+$ cat alfa.sh
+ceil 2.1
 
-~~~
-awk -f /usr/share/awk/libstd.awk -f ceil.awk
+$ stdlib sh ./alfa.sh
+3
+
+$ cat bravo.sh
+ceil "$1"
+
+$ stdlib sh ./bravo.sh 2.1
+3
 ~~~
 
 Shell script:
 
 ~~~sh
 #!/usr/local/bin/stdlib sh
-xtrace echo 'hello world'
+ceil 2.1
 ~~~
-
-Or you can source the library directly:
 
 ~~~sh
 #!/bin/sh
 . /usr/share/sh/libstd.sh
-xtrace echo 'hello world'
+ceil 2.1
+~~~
+
+~~~sh
+#!/bin/sh
+. stdlib sh
+ceil 2.1
+~~~
+
+Awk command line:
+
+~~~pl
+$ cat alfa.awk
+BEGIN {print ceil(2.1)}
+
+$ awk -f /usr/share/awk/libstd.awk -f ./alfa.awk
+3
+
+$ stdlib awk ./alfa.awk
+3
+
+$ cat bravo.awk
+BEGIN {print ceil(ARGV[1])}
+
+$ awk -f /usr/share/awk/libstd.awk -f ./bravo.awk 2.1
+3
+
+$ stdlib awk ./bravo.awk 2.1
+3
+~~~
+
+~~~sh
+$ echo 'BEGIN {print ceil(2.1)}' | awk -f /usr/share/awk/libstd.awk -f -
+3
+
+$ echo 'BEGIN {print ceil(ARGV[1])}' | awk -f /usr/share/awk/libstd.awk -f - 2.1
+3
+
+$ echo 'BEGIN {print ceil(2.1)}' | stdlib awk -
+3
+
+$ echo 'BEGIN {print ceil(ARGV[1])}' | stdlib awk - 2.1
+3
+~~~
+
+Awk script:
+
+~~~awk
+#!/usr/local/bin/stdlib awk
+BEGIN {print ceil(2.1)}
 ~~~
 
 Links
