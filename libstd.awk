@@ -78,11 +78,12 @@ function xtrace(arr,   b, d, k, q, w, z) {
   while (++d in arr) {
     k = split(arr[d], q, b)
     q[1]
+    if (d - 1)
+      z = z " "
     for (w in q) {
       z = z (!k || q[w] ~ "[^[:alnum:]%+,./:=@_-]" ? b q[w] b : q[w]) \
       (w < k ? "\\" b : "")
     }
-    z = z " "
   }
   printf "\33[36m%s\33[m\n", wrap(z)
   system(z)
