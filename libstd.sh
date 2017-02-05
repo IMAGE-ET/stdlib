@@ -1,3 +1,11 @@
+ceil() {
+  stdlib awk - "$1" <<'eof'
+BEGIN {
+  print ceil(ARGV[1])
+}
+eof
+}
+
 encodeURIComponent() {
   stdlib awk - "$1" <<'eof'
 BEGIN {
