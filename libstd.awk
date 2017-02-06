@@ -55,6 +55,12 @@ function quote(str,   d, m, x, y, z) {
   return z
 }
 
+function smartmatch(diamond, rough,   x, y) {
+  for (x in rough)
+    y[rough[x]]
+  return diamond in y
+}
+
 function wrap(text,   q, y, z) {
   while (text) {
     q = match(text, / |$/)
