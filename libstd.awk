@@ -47,6 +47,10 @@ function exists(file) {
   return getline < file < 0 ? 0 : 1
 }
 
+function max(value1, value2) {
+  return value1 > value2 ? value1 : value2
+}
+
 function quote(str,   d, m, x, y, z) {
   d = "\47"
   m = split(str, x, d)
