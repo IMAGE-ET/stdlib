@@ -6,6 +6,14 @@ BEGIN {
 eof
 }
 
+floor() {
+  stdlib awk - "$1" <<'eof'
+BEGIN {
+  print floor(ARGV[1])
+}
+eof
+}
+
 lts() {
   awk '
   {
