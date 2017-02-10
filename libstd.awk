@@ -4,6 +4,12 @@ function array_join(arr, separator,   q, x) {
   return x
 }
 
+function array_length(arr,   q, x) {
+  for (q in arr)
+    x++
+  return x
+}
+
 function ceil(x,   y) {
   y = int(x)
   return y < x ? y + 1 : y
