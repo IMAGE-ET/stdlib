@@ -70,6 +70,17 @@ function quote(str,   d, m, x, y, z) {
   return z
 }
 
+function slice(arr, begin, end,   q, x, z) {
+  for (q in arr)
+    if (q >= begin && (!end || q < end)) {
+      x[q] = arr[q]
+    }
+  delete arr
+  for (q in x) {
+    arr[++z] = x[q]
+  }
+}
+
 function smartmatch(diamond, rough,   x, y) {
   for (x in rough)
     y[rough[x]]
