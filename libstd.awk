@@ -62,14 +62,14 @@ function max(value1, value2) {
   return value1 > value2 ? value1 : value2
 }
 
-function chr(ord) {
-  return sprintf("%c", ord)
+function chr(inte) {
+  return sprintf("%c", inte)
 }
 
-function ord(chr,   x, y) {
+function ord(char,   x, y) {
   for (x = 0; x < 127; x++)
     y[sprintf("%c", x)] = x
-  return y[chr]
+  return y[char]
 }
 
 function quote(str,   d, m, x, y, z) {
