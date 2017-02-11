@@ -62,6 +62,10 @@ function max(value1, value2) {
   return value1 > value2 ? value1 : value2
 }
 
+function chr(ord) {
+  return sprintf("%c", ord)
+}
+
 function ord(chr,   x, y) {
   for (x = 0; x < 127; x++)
     y[sprintf("%c", x)] = x
