@@ -62,6 +62,12 @@ function max(value1, value2) {
   return value1 > value2 ? value1 : value2
 }
 
+function ord(chr,   x, y) {
+  for (x = 0; x < 127; x++)
+    y[sprintf("%c", x)] = x
+  return y[chr]
+}
+
 function quote(str,   d, m, x, y, z) {
   d = "\47"
   m = split(str, x, d)
