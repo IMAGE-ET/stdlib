@@ -46,11 +46,9 @@ function decodeURIComponent(encodedURI,   g, q, y, z) {
   return z
 }
 
-function encodeURIComponent(str,   g, q, y, z) {
-  while (g++ < 125)
-    q[sprintf("%c", g)] = g
-  while (g = substr(str, ++y, 1))
-    z = z (g ~ /[[:alnum:]_.!~*\47()-]/ ? g : "%" sprintf("%02X", q[g]))
+function encodeURIComponent(str,   k, q, z) {
+  while (k = substr(str, ++q, 1))
+    z = z (k ~ /[[:alnum:]_.!~*\47()-]/ ? k : "%" sprintf("%02X", ord(k)))
   return z
 }
 
