@@ -39,7 +39,7 @@ ceil 2.1
 
 ~~~sh
 #!/bin/sh
-. /usr/share/sh/libstd.sh
+. /usr/local/share/libstd.sh
 ceil 2.1
 ~~~
 
@@ -55,7 +55,7 @@ Awk command line:
 $ cat alfa.awk
 BEGIN {print ceil(2.1)}
 
-$ awk -f /usr/share/awk/libstd.awk -f ./alfa.awk
+$ awk -f /usr/local/share/libstd.awk -f ./alfa.awk
 3
 
 $ stdlib awk ./alfa.awk
@@ -64,7 +64,7 @@ $ stdlib awk ./alfa.awk
 $ cat bravo.awk
 BEGIN {print ceil(ARGV[1])}
 
-$ awk -f /usr/share/awk/libstd.awk -f ./bravo.awk 2.1
+$ awk -f /usr/local/share/libstd.awk -f ./bravo.awk 2.1
 3
 
 $ stdlib awk ./bravo.awk 2.1
@@ -72,10 +72,10 @@ $ stdlib awk ./bravo.awk 2.1
 ~~~
 
 ~~~sh
-$ echo 'BEGIN {print ceil(2.1)}' | awk -f /usr/share/awk/libstd.awk -f -
+$ echo 'BEGIN {print ceil(2.1)}' | awk -f /usr/local/share/libstd.awk -f -
 3
 
-$ echo 'BEGIN {print ceil(ARGV[1])}' | awk -f /usr/share/awk/libstd.awk -f - 2.1
+$ echo 'BEGIN {print ceil(ARGV[1])}' | awk -f /usr/local/share/libstd.awk -f - 2.1
 3
 
 $ echo 'BEGIN {print ceil(2.1)}' | stdlib awk -

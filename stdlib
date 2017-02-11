@@ -9,10 +9,10 @@ then z=/dev/null
 fi
 case $y in
 awk)
-  awk -f /usr/share/awk/libstd.awk -f "$z" "$@"
+  awk -f /usr/local/share/libstd.awk -f "$z" "$@"
 ;;
 sh)
-  . /usr/share/sh/libstd.sh
+  . /usr/local/share/libstd.sh
   . "$z" "$@"
 ;;
 version)
