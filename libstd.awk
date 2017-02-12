@@ -95,6 +95,17 @@ function smartmatch(diamond, rough,   x, y) {
   return diamond in y
 }
 
+function strtol(str, base,   xr, ya, zu) {
+  xr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  while (1) {
+    zu += index(xr, substr(str, ++ya, 1)) - 1
+    if (ya == length(str))
+      break
+    zu *= base
+  }
+  return zu
+}
+
 function wrap(text,   q, y, z) {
   while (text) {
     q = match(text, / |$/)
