@@ -62,6 +62,14 @@ function max(arr,   y, z) {
   return z
 }
 
+function min(arr,   y, z) {
+  for (y in arr)
+    if (!z || arr[y] < z) {
+      z = arr[y]
+    }
+  return z
+}
+
 function chr(inte) {
   return sprintf("%c", inte)
 }
