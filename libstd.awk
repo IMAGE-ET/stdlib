@@ -71,7 +71,7 @@ function min(arr,   y, z) {
 }
 
 function chr(inte) {
-  return sprintf("%c", inte)
+  return sprintf("%c", +inte)
 }
 
 function ord(char,   x) {
