@@ -54,8 +54,12 @@ function exists(file) {
   return getline < file < 0 ? 0 : 1
 }
 
-function max(value1, value2) {
-  return value1 > value2 ? value1 : value2
+function max(arr,   y, z) {
+  for (y in arr)
+    if (arr[y] > z) {
+      z = arr[y]
+    }
+  return z
 }
 
 function chr(inte) {
