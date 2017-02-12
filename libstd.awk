@@ -32,16 +32,14 @@ function insertion_sort(arr,   x, y, z) {
   }
 }
 
-function decodeURIComponent(encodedURI,   g, q, y, z) {
-  while (g++ < 125)
-    q[sprintf("%X", g)] = sprintf("%c", g)
-  while (g = substr(encodedURI, ++y, 1))
-    if (g == "%") {
-      z = z q[toupper(substr(encodedURI, ++y, 2))]
-      ++y
+function decodeURIComponent(encodedURI,   k, x, z) {
+  while (k = substr(encodedURI, ++x, 1))
+    if (k == "%") {
+      z = z chr(strtol(substr(encodedURI, ++x, 2), 16))
+      ++x
     }
     else {
-      z = z g
+      z = z k
     }
   return z
 }
