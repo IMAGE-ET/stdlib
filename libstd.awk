@@ -32,10 +32,10 @@ function insertion_sort(arr,   x, y, z) {
   }
 }
 
-function decodeURIComponent(encodedURI,   k, x, z) {
-  while (k = substr(encodedURI, ++x, 1))
+function uri_unescape(string,   k, x, z) {
+  while (k = substr(string, ++x, 1))
     if (k == "%") {
-      z = z chr(strtol(substr(encodedURI, ++x, 2), 16))
+      z = z chr(strtol(substr(string, ++x, 2), 16))
       ++x
     }
     else {
@@ -44,8 +44,8 @@ function decodeURIComponent(encodedURI,   k, x, z) {
   return z
 }
 
-function encodeURIComponent(str,   k, q, z) {
-  while (k = substr(str, ++q, 1))
+function uri_escape(string,   k, q, z) {
+  while (k = substr(string, ++q, 1))
     z = z (k ~ /[[:alnum:]_.!~*\47()-]/ ? k : "%" sprintf("%02X", ord(k)))
   return z
 }
@@ -93,11 +93,11 @@ function smartmatch(diamond, rough,   x, y) {
   return diamond in y
 }
 
-function strtol(str, base,   xr, ya, zu) {
+function strtol(string, base,   xr, ya, zu) {
   xr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   while (1) {
-    zu += index(xr, substr(str, ++ya, 1)) - 1
-    if (ya == length(str))
+    zu += index(xr, substr(string, ++ya, 1)) - 1
+    if (ya == length(string))
       break
     zu *= base
   }
