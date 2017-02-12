@@ -74,10 +74,9 @@ function chr(inte) {
   return sprintf("%c", inte)
 }
 
-function ord(char,   x, y) {
-  for (x = 0; x < 127; x++)
-    y[sprintf("%c", x)] = x
-  return y[char]
+function ord(char,   x) {
+  while (sprintf("%c", ++x) != char);
+  return x
 }
 
 function quote(str,   d, m, x, y, z) {
