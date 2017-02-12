@@ -35,7 +35,7 @@ function insertion_sort(arr,   x, y, z) {
 function uri_unescape(string,   k, x, z) {
   while (k = substr(string, ++x, 1))
     if (k == "%") {
-      z = z chr(strtol(substr(string, ++x, 2), 16))
+      z = z chr("0x" substr(string, ++x, 2))
       ++x
     }
     else {
