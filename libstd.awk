@@ -93,15 +93,15 @@ function smartmatch(diamond, rough,   x, y) {
   return diamond in y
 }
 
-function strtol(string, base,   xr, ya, zu) {
-  xr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+function strtol(string, base,   xr, ya) {
   while (1) {
-    zu += index(xr, substr(string, ++ya, 1)) - 1
-    if (ya == length(string))
+    ya += index("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      substr(string, ++xr, 1)) - 1
+    if (xr == length(string))
       break
-    zu *= base
+    ya *= base
   }
-  return zu
+  return ya
 }
 
 function wrap(text,   q, y, z) {
