@@ -32,6 +32,12 @@ function insertion_sort(arr,   x, y, z) {
   }
 }
 
+function mean(arr,   y, z) {
+  for (y in arr)
+    z += arr[y]
+  return z / y
+}
+
 function uri_unescape(string,   k, x, z) {
   while (k = substr(string, ++x, 1))
     if (k == "%") {
