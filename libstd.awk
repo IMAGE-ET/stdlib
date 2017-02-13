@@ -93,9 +93,10 @@ function slice(arr, begin, end,   q, x, z) {
       x[q] = arr[q]
     }
   delete arr
-  for (q in x) {
+  z = 0
+  for (q in x)
     arr[++z] = x[q]
-  }
+  return z
 }
 
 function smartmatch(diamond, rough,   x, y) {
