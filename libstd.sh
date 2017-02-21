@@ -1,17 +1,19 @@
+z=$(cat /usr/local/share/libstd.awk)
+
 ceil() {
-  stdlib awk - "$1" <<'eof'
-BEGIN {
-  print ceil(ARGV[1])
-}
-eof
+  awk "$z"'
+  BEGIN {
+    print ceil(ARGV[1])
+  }
+  ' "$1"
 }
 
 floor() {
-  stdlib awk - "$1" <<'eof'
-BEGIN {
-  print floor(ARGV[1])
-}
-eof
+  awk "$z"'
+  BEGIN {
+    print floor(ARGV[1])
+  }
+  ' "$1"
 }
 
 lts() {
@@ -55,9 +57,9 @@ slurp() {
 }
 
 xtrace() {
-  stdlib awk - "$@" <<'eof'
-BEGIN {
-  xtrace(ARGV)
-}
-eof
+  awk "$z"'
+  BEGIN {
+    xtrace(ARGV)
+  }
+  ' "$@"
 }
