@@ -32,7 +32,7 @@ function insertion_sort(arr,   x, y, z) {
   }
 }
 
-function json(rough, diamond,   x, y, z) {
+function json(diamond, rough,   x, y, z) {
   split(rough, x, /\42?, ?\42/)
   for (y in x) {
     if (x[y] ~ diamond) {
