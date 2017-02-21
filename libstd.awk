@@ -32,6 +32,16 @@ function insertion_sort(arr,   x, y, z) {
   }
 }
 
+function json(rough, diamond,   x, y, z) {
+  split(rough, x, /\42?, ?\42/)
+  for (y in x) {
+    if (x[y] ~ diamond) {
+      split(x[y], z, /\42: ?\42?/)
+      return z[2]
+    }
+  }
+}
+
 function mean(arr,   y, z) {
   for (y in arr)
     z += arr[y]
