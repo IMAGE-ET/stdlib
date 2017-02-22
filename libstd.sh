@@ -1,7 +1,7 @@
-LSTD3=$(cat /usr/local/share/libstd.awk)
+LSTD=$(cat /usr/local/share/libstd.awk)
 
 ceil() {
-  awk "$LSTD3"'
+  awk "$LSTD"'
   BEGIN {
     print ceil(ARGV[1])
   }
@@ -9,7 +9,7 @@ ceil() {
 }
 
 floor() {
-  awk "$LSTD3"'
+  awk "$LSTD"'
   BEGIN {
     print floor(ARGV[1])
   }
@@ -57,7 +57,7 @@ slurp() {
 }
 
 xtrace() {
-  awk "$LSTD3"'
+  awk "$LSTD"'
   BEGIN {
     xtrace(ARGV)
   }

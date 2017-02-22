@@ -1,20 +1,21 @@
 #!/bin/dash -e
 # -*- sh -*-
-LSTD1=$1 LSTD2=$2
+x=$1 y=$2
 if [ "$#" -ge 2 ]
 then shift 2
 fi
-if [ ! "$LSTD2" ]
-then LSTD2=/dev/null
+if [ ! "$y" ]
+then y=/dev/null
 fi
-case $LSTD1 in
+case $x in
 awk)
-  awk -f /usr/local/share/libstd.awk -f "$LSTD2" "$@"
+  awk -f /usr/local/share/libstd.awk -f "$y" "$@"
 ;;
 sh)
   . /usr/local/share/libstd.sh
-  . "$LSTD2" "$@"
+  . "$y" "$@"
 ;;
 version)
   echo 1.2.0
 esac
+unset x y
