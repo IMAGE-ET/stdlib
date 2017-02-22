@@ -48,6 +48,12 @@ function mean(arr,   y, z) {
   return z / y
 }
 
+function repeat(str, cnt,   x) {
+  while (cnt--)
+    x = x str
+  return x
+}
+
 function uri_unescape(string,   k, x, z) {
   while (k = substr(string, ++x, 1))
     if (k == "%") {
