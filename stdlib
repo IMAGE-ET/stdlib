@@ -1,19 +1,19 @@
 #!/bin/dash -e
 # -*- sh -*-
-x=$# y=$1 z=$2
-if [ "$x" -ge 2 ]
+LSTD1=$1 LSTD2=$2
+if [ "$#" -ge 2 ]
 then shift 2
 fi
-if [ ! "$z" ]
-then z=/dev/null
+if [ ! "$LSTD2" ]
+then LSTD2=/dev/null
 fi
-case $y in
+case $LSTD1 in
 awk)
-  awk -f /usr/local/share/libstd.awk -f "$z" "$@"
+  awk -f /usr/local/share/libstd.awk -f "$LSTD2" "$@"
 ;;
 sh)
   . /usr/local/share/libstd.sh
-  . "$z" "$@"
+  . "$LSTD2" "$@"
 ;;
 version)
   echo 1.2.0
