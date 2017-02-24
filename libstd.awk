@@ -54,6 +54,16 @@ function repeat(str, cnt,   x) {
   return x
 }
 
+function timelocal(sec, min, hour, mday, mon, year) {
+  return \
+  (year - 1970) * 60 * 60 * 24 * 365.25 + \
+  (mon - 1) * 60 * 60 * 24 * 365.25 / 12 + \
+  (mday - 1) * 60 * 60 * 24 + \
+  hour * 60 * 60 + \
+  min * 60 + \
+  sec
+}
+
 function uri_unescape(string,   k, x, z) {
   while (k = substr(string, ++x, 1))
     if (k == "%") {
