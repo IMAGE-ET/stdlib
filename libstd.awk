@@ -54,13 +54,13 @@ function repeat(str, cnt,   x) {
   return x
 }
 
-function timelocal(sec, min, hour, mday, mon, year) {
+function timelocal(sec, hmin, hour, mday, mon, year) {
   return \
   (year - 1970) * 60 * 60 * 24 * 365.25 + \
   (mon - 1) * 60 * 60 * 24 * 365.25 / 12 + \
   (mday - 1) * 60 * 60 * 24 + \
   hour * 60 * 60 + \
-  min * 60 + \
+  hmin * 60 + \
   sec
 }
 
