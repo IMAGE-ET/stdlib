@@ -46,6 +46,10 @@ stl() {
   ' "$1"
 }
 
+scope() {
+  eval "$(set)" command eval '\"\$@\"'
+}
+
 slurp() {
   awk '
   BEGIN {
