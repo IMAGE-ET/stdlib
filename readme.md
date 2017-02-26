@@ -17,12 +17,6 @@ $ ceil 2.1
 ~~~
 
 ~~~rb
-$ . shlib -c
-$ ceil 2.1
-3
-~~~
-
-~~~rb
 $ shlib -c 'ceil 2.1'
 3
 ~~~
@@ -54,12 +48,6 @@ Shell script examples
 ~~~rb
 #!/bin/sh
 . /usr/local/share/libstd.sh
-ceil 2.1
-~~~
-
-~~~rb
-#!/bin/sh
-. shlib -c
 ceil 2.1
 ~~~
 
