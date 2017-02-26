@@ -62,6 +62,18 @@ Awk command line examples
 -------------------------
 
 ~~~rb
+$ . stdlib sh
+$ awk "$LSTD"'BEGIN {print ceil(2.1)}'
+3
+~~~
+
+~~~rb
+$ . stdlib sh
+$ awk "$LSTD"'BEGIN {print ceil(ARGV[1])}' 2.1
+3
+~~~
+
+~~~rb
 $ cat alfa.awk
 BEGIN {print ceil(2.1)}
 
@@ -80,26 +92,6 @@ $ awk -f /usr/local/share/libstd.awk -f ./bravo.awk 2.1
 3
 
 $ stdlib awk ./bravo.awk 2.1
-3
-~~~
-
-~~~rb
-$ echo 'BEGIN {print ceil(2.1)}' | awk -f /usr/local/share/libstd.awk -f -
-3
-~~~
-
-~~~rb
-$ echo 'BEGIN {print ceil(ARGV[1])}' | awk -f /usr/local/share/libstd.awk -f - 2.1
-3
-~~~
-
-~~~rb
-$ echo 'BEGIN {print ceil(2.1)}' | stdlib awk -
-3
-~~~
-
-~~~rb
-$ echo 'BEGIN {print ceil(ARGV[1])}' | stdlib awk - 2.1
 3
 ~~~
 
