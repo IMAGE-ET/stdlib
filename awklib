@@ -1,0 +1,13 @@
+#!/bin/dash -e
+# -*- sh -*-
+case $1 in
+-f)
+  awk -f /usr/local/share/libstd.awk "$@"
+;;
+-c)
+  shift
+  awk "$(cat /usr/local/share/libstd.awk)$@"
+;;
+version)
+  cat /usr/local/share/stdlib.txt
+esac

@@ -1,0 +1,16 @@
+#!/bin/dash -e
+# -*- sh -*-
+case $1 in
+-f)
+  shift
+  . /usr/local/share/libstd.sh
+  . "$@"
+;;
+-c)
+  shift
+  . /usr/local/share/libstd.sh
+  "$@"
+;;
+version)
+  cat /usr/local/share/stdlib.txt
+esac
