@@ -23,6 +23,16 @@ $ ceil 2.1
 ~~~
 
 ~~~rb
+$ shlib -c 'ceil 2.1'
+3
+~~~
+
+~~~rb
+$ shlib -c 'ceil "$1"' 2.1
+3
+~~~
+
+~~~rb
 $ cat ceil.sh
 ceil 2.1
 
@@ -58,7 +68,7 @@ ceil 2.1
 ceil 2.1
 ~~~
 
-~~~
+~~~rb
 #!/usr/local/bin/shlib -f
 ceil "$1"
 ~~~

@@ -3,13 +3,14 @@
 case $1 in
 -f)
   shift
-  z=$(cat /usr/local/share/libstd.sh "$1")
-  dash -c "$z" "$@"
+  z=$(cat "$1")
+  dash -c ". /usr/local/share/libstd.sh; $z" "$@"
 ;;
 -c)
-  shift
   . /usr/local/share/libstd.sh
-  "$@"
+  z=$2
+  shift 2
+  eval "$z"
 ;;
 -v)
   cat /usr/local/share/stdlib.txt
