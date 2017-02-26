@@ -3,8 +3,8 @@
 case $1 in
 -f)
   shift
-  . /usr/local/share/libstd.sh
-  . "$@"
+  z=$(cat /usr/local/share/libstd.sh "$1")
+  dash -c "$z" "$@"
 ;;
 -c)
   shift
