@@ -54,6 +54,12 @@ function repeat(str, cnt,   x) {
   return x
 }
 
+function rindex(rough, diamond,   y, z) {
+  while (y = index(substr(rough, z + 1), diamond))
+    z += y
+  return z
+}
+
 function timelocal(sec, hmin, hour, mday, mon, year) {
   return \
   (year - 1970) * 60 * 60 * 24 * 365.25 + \
