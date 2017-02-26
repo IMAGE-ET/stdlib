@@ -1,4 +1,4 @@
-#!/usr/local/bin/stdlib sh
+#!/usr/local/bin/shlib -f
 f=$(mktemp)
 seq 10 > "$f"
 cat "$f"

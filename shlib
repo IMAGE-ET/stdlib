@@ -1,16 +1,16 @@
 #!/bin/dash -e
 # -*- sh -*-
 case $1 in
--f)
-  shift
-  z=$(cat "$1")
-  dash -c ". /usr/local/share/libstd.sh; $z" "$@"
-;;
 -c)
   . /usr/local/share/libstd.sh
   z=$2
   shift 2
   eval "$z"
+;;
+-f)
+  shift
+  z=$(cat "$1")
+  dash -c ". /usr/local/share/libstd.sh; $z" "$@"
 ;;
 -v)
   cat /usr/local/share/stdlib.txt

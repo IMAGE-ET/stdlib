@@ -70,12 +70,12 @@ $ awklib -v
 ~~~
 
 ~~~rb
-$ awklib -c 'BEGIN {print ceil(2.1)}'
+$ awklib -e 'BEGIN {print ceil(2.1)}'
 3
 ~~~
 
 ~~~rb
-$ awklib -c 'BEGIN {print ceil(ARGV[1])}' 2.1
+$ awklib -e 'BEGIN {print ceil(ARGV[1])}' 2.1
 3
 ~~~
 
@@ -85,7 +85,7 @@ $ cat ceil.txt
 3.1
 4.1
 
-$ awklib -c '{print ceil($0)}' ceil.txt
+$ awklib -e '{print ceil($0)}' ceil.txt
 3
 4
 5

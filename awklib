@@ -1,12 +1,12 @@
 #!/bin/dash -e
 # -*- sh -*-
 case $1 in
--f)
-  awk -f /usr/local/share/libstd.awk "$@"
-;;
--c)
+-e)
   shift
   awk "$(cat /usr/local/share/libstd.awk)$@"
+;;
+-f)
+  awk -f /usr/local/share/libstd.awk "$@"
 ;;
 -v)
   cat /usr/local/share/stdlib.txt
