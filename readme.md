@@ -6,7 +6,7 @@ Shell command line examples
 ---------------------------
 
 ~~~rb
-$ stdlib version
+$ shlib -v
 1.2.1
 ~~~
 
@@ -17,24 +17,24 @@ $ ceil 2.1
 ~~~
 
 ~~~rb
-$ . stdlib sh
+$ . shlib -c
 $ ceil 2.1
 3
 ~~~
 
 ~~~rb
-$ cat alfa.sh
+$ cat ceil.sh
 ceil 2.1
 
-$ stdlib sh ./alfa.sh
+$ shlib -f ceil.sh
 3
 ~~~
 
 ~~~rb
-$ cat bravo.sh
+$ cat ceil.sh
 ceil "$1"
 
-$ stdlib sh ./bravo.sh 2.1
+$ shlib -f ceil.sh 2.1
 3
 ~~~
 
@@ -42,7 +42,7 @@ Shell script examples
 ---------------------
 
 ~~~rb
-#!/usr/local/bin/stdlib sh
+#!/usr/local/bin/shlib -f
 ceil 2.1
 ~~~
 
@@ -54,44 +54,52 @@ ceil 2.1
 
 ~~~rb
 #!/bin/sh
-. stdlib sh
+. shlib -c
 ceil 2.1
+~~~
+
+~~~
+#!/usr/local/bin/shlib -f
+ceil "$1"
 ~~~
 
 Awk command line examples
 -------------------------
 
 ~~~rb
-$ . stdlib sh
-$ awk "$LSTD"'BEGIN {print ceil(2.1)}'
+$ awklib -v
+1.2.1
+~~~
+
+~~~rb
+$ awklib -c 'BEGIN {print ceil(2.1)}'
 3
 ~~~
 
 ~~~rb
-$ . stdlib sh
-$ awk "$LSTD"'BEGIN {print ceil(ARGV[1])}' 2.1
+$ awklib -c 'BEGIN {print ceil(ARGV[1])}' 2.1
 3
 ~~~
 
 ~~~rb
-$ cat alfa.awk
+$ cat ceil.awk
 BEGIN {print ceil(2.1)}
 
-$ awk -f /usr/local/share/libstd.awk -f ./alfa.awk
+$ awk -f /usr/local/share/libstd.awk -f ceil.awk
 3
 
-$ stdlib awk ./alfa.awk
+$ awklib -f ceil.awk
 3
 ~~~
 
 ~~~rb
-$ cat bravo.awk
+$ cat ceil.awk
 BEGIN {print ceil(ARGV[1])}
 
-$ awk -f /usr/local/share/libstd.awk -f ./bravo.awk 2.1
+$ awk -f /usr/local/share/libstd.awk -f ceil.awk 2.1
 3
 
-$ stdlib awk ./bravo.awk 2.1
+$ awklib -f ceil.awk 2.1
 3
 ~~~
 
@@ -99,7 +107,7 @@ Awk script example
 ------------------
 
 ~~~rb
-#!/usr/local/bin/stdlib awk
+#!/usr/local/bin/awklib -f
 BEGIN {print ceil(2.1)}
 ~~~
 
