@@ -2,27 +2,35 @@ StdLib
 ======
 POSIX standard library for Awk and shell scripts
 
-Examples
----------------------
-Shell command line:
+Shell command line examples
+---------------------------
 
-~~~c
+~~~rb
 $ stdlib version
 1.0.0
+~~~
 
-$ . stdlib sh
-
+~~~rb
+$ . /usr/local/share/libstd.sh
 $ ceil 2.1
 3
 ~~~
 
-~~~c
+~~~rb
+$ . stdlib sh
+$ ceil 2.1
+3
+~~~
+
+~~~rb
 $ cat alfa.sh
 ceil 2.1
 
 $ stdlib sh ./alfa.sh
 3
+~~~
 
+~~~rb
 $ cat bravo.sh
 ceil "$1"
 
@@ -30,28 +38,30 @@ $ stdlib sh ./bravo.sh 2.1
 3
 ~~~
 
-Shell script:
+Shell script examples
+---------------------
 
-~~~sh
+~~~rb
 #!/usr/local/bin/stdlib sh
 ceil 2.1
 ~~~
 
-~~~sh
+~~~rb
 #!/bin/sh
 . /usr/local/share/libstd.sh
 ceil 2.1
 ~~~
 
-~~~sh
+~~~rb
 #!/bin/sh
 . stdlib sh
 ceil 2.1
 ~~~
 
-Awk command line:
+Awk command line examples
+-------------------------
 
-~~~pl
+~~~rb
 $ cat alfa.awk
 BEGIN {print ceil(2.1)}
 
@@ -60,7 +70,9 @@ $ awk -f /usr/local/share/libstd.awk -f ./alfa.awk
 
 $ stdlib awk ./alfa.awk
 3
+~~~
 
+~~~rb
 $ cat bravo.awk
 BEGIN {print ceil(ARGV[1])}
 
@@ -71,23 +83,30 @@ $ stdlib awk ./bravo.awk 2.1
 3
 ~~~
 
-~~~sh
+~~~rb
 $ echo 'BEGIN {print ceil(2.1)}' | awk -f /usr/local/share/libstd.awk -f -
 3
+~~~
 
+~~~rb
 $ echo 'BEGIN {print ceil(ARGV[1])}' | awk -f /usr/local/share/libstd.awk -f - 2.1
 3
+~~~
 
+~~~rb
 $ echo 'BEGIN {print ceil(2.1)}' | stdlib awk -
 3
+~~~
 
+~~~rb
 $ echo 'BEGIN {print ceil(ARGV[1])}' | stdlib awk - 2.1
 3
 ~~~
 
-Awk script:
+Awk script example
+------------------
 
-~~~awk
+~~~rb
 #!/usr/local/bin/stdlib awk
 BEGIN {print ceil(2.1)}
 ~~~
