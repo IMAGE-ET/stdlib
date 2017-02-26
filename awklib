@@ -8,6 +8,6 @@ case $1 in
   shift
   awk "$(cat /usr/local/share/libstd.awk)$@"
 ;;
-version)
+-v)
   cat /usr/local/share/stdlib.txt
 esac

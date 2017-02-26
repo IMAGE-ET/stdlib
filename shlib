@@ -11,6 +11,6 @@ case $1 in
   . /usr/local/share/libstd.sh
   "$@"
 ;;
-version)
+-v)
   cat /usr/local/share/stdlib.txt
 esac
