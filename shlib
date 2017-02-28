@@ -10,7 +10,6 @@ then
   shift 2
   eval "$z"
 else
-  shift
   z=$(cat "$1")
   dash -c ". /usr/local/share/libstd.sh; $z" "$@"
 fi

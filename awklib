@@ -7,6 +7,5 @@ elif [ "$1" = -f ]
 then
   awk -f /usr/local/share/libstd.awk "$@"
 else
-  shift
   awk "$(cat /usr/local/share/libstd.awk)$@"
 fi
