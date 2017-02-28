@@ -30,7 +30,7 @@ $ shlib -c 'ceil "$1"' 2.1
 $ cat ceil.sh
 ceil 2.1
 
-$ shlib -f ceil.sh
+$ shlib ceil.sh
 3
 ~~~
 
@@ -38,7 +38,7 @@ $ shlib -f ceil.sh
 $ cat ceil.sh
 ceil "$1"
 
-$ shlib -f ceil.sh 2.1
+$ shlib ceil.sh 2.1
 3
 ~~~
 
@@ -52,12 +52,12 @@ ceil 2.1
 ~~~
 
 ~~~rb
-#!/usr/local/bin/shlib -f
+#!/usr/local/bin/shlib
 ceil 2.1
 ~~~
 
 ~~~rb
-#!/usr/local/bin/shlib -f
+#!/usr/local/bin/shlib
 ceil "$1"
 ~~~
 
@@ -70,12 +70,12 @@ $ awklib -v
 ~~~
 
 ~~~rb
-$ awklib -e 'BEGIN {print ceil(2.1)}'
+$ awklib 'BEGIN {print ceil(2.1)}'
 3
 ~~~
 
 ~~~rb
-$ awklib -e 'BEGIN {print ceil(ARGV[1])}' 2.1
+$ awklib 'BEGIN {print ceil(ARGV[1])}' 2.1
 3
 ~~~
 
@@ -85,7 +85,7 @@ $ cat ceil.txt
 3.1
 4.1
 
-$ awklib -e '{print ceil($0)}' ceil.txt
+$ awklib '{print ceil($0)}' ceil.txt
 3
 4
 5

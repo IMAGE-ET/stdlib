@@ -1,13 +1,12 @@
 #!/bin/dash -e
 # -*- sh -*-
-case $1 in
--e)
+if [ "$1" = -v ]
+then
+  cat /usr/local/share/stdlib.txt
+elif [ "$1" = -f ]
+then
+  awk -f /usr/local/share/libstd.awk "$@"
+else
   shift
   awk "$(cat /usr/local/share/libstd.awk)$@"
-;;
--f)
-  awk -f /usr/local/share/libstd.awk "$@"
-;;
--v)
-  cat /usr/local/share/stdlib.txt
-esac
+fi

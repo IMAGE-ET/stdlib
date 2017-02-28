@@ -17,22 +17,22 @@ shlib -c 'ceil "$1"' 2.1
 
 say 4
 echo 'ceil 2.1' > "$x"
-shlib -f "$x"
+shlib "$x"
 
 say 5
 echo 'ceil "$1"' > "$x"
-shlib -f "$x" 2.1
+shlib "$x" 2.1
 
 say 6
 cat > "$x" <<'eof'
-#!/usr/local/bin/shlib -f
+#!/usr/local/bin/shlib
 ceil 2.1
 eof
 "$x"
 
 say 7
 cat > "$x" <<'eof'
-#!/usr/local/bin/shlib -f
+#!/usr/local/bin/shlib
 ceil "$1"
 eof
 "$x" 2.1
@@ -41,10 +41,10 @@ say 8
 awklib -v
 
 say 9
-awklib -c 'BEGIN {print ceil(2.1)}'
+awklib 'BEGIN {print ceil(2.1)}'
 
 say 10
-awklib -c 'BEGIN {print ceil(ARGV[1])}' 2.1
+awklib 'BEGIN {print ceil(ARGV[1])}' 2.1
 
 say 11
 cat > "$x" <<'eof'
@@ -52,7 +52,7 @@ cat > "$x" <<'eof'
 3.1
 4.1
 eof
-awklib -c '{print ceil($0)}' "$x"
+awklib '{print ceil($0)}' "$x"
 
 say 12
 echo 'BEGIN {print ceil(2.1)}' > "$x"
