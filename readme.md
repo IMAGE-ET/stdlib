@@ -2,71 +2,6 @@ StdLib
 ======
 POSIX standard library for Awk and shell scripts
 
-Shell command line examples
----------------------------
-
-~~~rb
-$ shlib -v
-1.2.1
-~~~
-
-~~~rb
-$ . /usr/local/share/libstd.sh
-$ ceil 2.1
-3
-~~~
-
-~~~rb
-$ . shlib -c
-$ ceil 2.1
-3
-~~~
-
-~~~rb
-$ shlib -c 'ceil 2.1'
-3
-~~~
-
-~~~rb
-$ shlib -c 'ceil "$1"' 2.1
-3
-~~~
-
-~~~rb
-$ cat ceil.sh
-ceil 2.1
-
-$ shlib ceil.sh
-3
-~~~
-
-~~~rb
-$ cat ceil.sh
-ceil "$1"
-
-$ shlib ceil.sh 2.1
-3
-~~~
-
-Shell script examples
----------------------
-
-~~~rb
-#!/bin/sh
-. /usr/local/share/libstd.sh
-ceil 2.1
-~~~
-
-~~~rb
-#!/usr/local/bin/shlib
-ceil 2.1
-~~~
-
-~~~rb
-#!/usr/local/bin/shlib
-ceil "$1"
-~~~
-
 Awk command line examples
 -------------------------
 
@@ -130,6 +65,71 @@ BEGIN {print ceil(2.1)}
 ~~~rb
 #!/usr/local/bin/awklib -f
 BEGIN {print ceil(ARGV[1])}
+~~~
+
+Shell command line examples
+---------------------------
+
+~~~rb
+$ shlib -v
+1.2.1
+~~~
+
+~~~rb
+$ . /usr/local/share/libstd.sh
+$ ceil 2.1
+3
+~~~
+
+~~~rb
+$ . shlib -c
+$ ceil 2.1
+3
+~~~
+
+~~~rb
+$ shlib -c 'ceil 2.1'
+3
+~~~
+
+~~~rb
+$ shlib -c 'ceil "$1"' 2.1
+3
+~~~
+
+~~~rb
+$ cat ceil.sh
+ceil 2.1
+
+$ shlib ceil.sh
+3
+~~~
+
+~~~rb
+$ cat ceil.sh
+ceil "$1"
+
+$ shlib ceil.sh 2.1
+3
+~~~
+
+Shell script examples
+---------------------
+
+~~~rb
+#!/bin/sh
+. /usr/local/share/libstd.sh
+ceil 2.1
+~~~
+
+~~~rb
+#!/usr/local/bin/shlib
+ceil 2.1
+~~~
+
+~~~rb
+#!/usr/local/bin/shlib
+ceil "$1"
 ~~~
 
 Links
