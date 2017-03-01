@@ -17,6 +17,12 @@ $ ceil 2.1
 ~~~
 
 ~~~rb
+$ . shlib -c
+$ ceil 2.1
+3
+~~~
+
+~~~rb
 $ shlib -c 'ceil 2.1'
 3
 ~~~
