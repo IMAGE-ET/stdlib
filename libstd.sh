@@ -1,7 +1,5 @@
-LSTD=$(cat /usr/local/share/libstd.awk)
-
 ceil() {
-  awk "$LSTD"'
+  awklib '
   BEGIN {
     print ceil(ARGV[1])
   }
@@ -9,7 +7,7 @@ ceil() {
 }
 
 floor() {
-  awk "$LSTD"'
+  awklib '
   BEGIN {
     print floor(ARGV[1])
   }
@@ -61,7 +59,7 @@ slurp() {
 }
 
 xtrace() {
-  awk "$LSTD"'
+  awklib '
   BEGIN {
     xtrace(ARGV)
   }
