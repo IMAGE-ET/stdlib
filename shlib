@@ -1,6 +1,9 @@
 #!/bin/dash -e
 # -*- sh -*-
-if [ "$1" = -v ]
+if [ "$1" = -h ]
+then
+  cat /usr/local/share/shlib.txt
+elif [ "$1" = -v ]
 then
   cat /usr/local/share/stdlib.txt
 elif [ "$1" = -c ]

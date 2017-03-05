@@ -1,0 +1,15 @@
+SYNOPSIS
+  scope <function> [arguments]
+
+DESCRIPTION
+  call a shell function without changing variables in the parent scope
+
+EXAMPLE
+  x() {
+    y='in x'
+    echo "$y"
+  }
+  y='outside x'
+  echo "$y"
+  scope x
+  echo "$y"

@@ -6,6 +6,11 @@ Awk command line examples
 -------------------------
 
 ~~~rb
+$ awklib -h
+# display help
+~~~
+
+~~~rb
 $ awklib -v
 1.2.1
 ~~~
@@ -69,6 +74,11 @@ BEGIN {print ceil(ARGV[1])}
 
 Shell command line examples
 ---------------------------
+
+~~~rb
+$ shlib -h
+# display help
+~~~
 
 ~~~rb
 $ shlib -v

@@ -1,0 +1,9 @@
+SYNOPSIS
+  ceil(x)
+
+DESCRIPTION
+  This function shall compute the smallest integral value not less than x
+
+EXAMPLE
+  ceil(2.1) # 3
+  ceil(-2.1) # -2
