@@ -48,6 +48,10 @@ scope() {
   eval "$(set)" command eval '\"\$@\"'
 }
 
+size() {
+  ls -ARn "$@" | awk '{z += $5} END {print z}'
+}
+
 slurp() {
   awk '
   BEGIN {
