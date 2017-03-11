@@ -14,7 +14,7 @@ floor() {
   ' "$1"
 }
 
-lts() {
+ltos() {
   awk '
   {
     c = length
@@ -30,7 +30,7 @@ lts() {
   ' "$1"
 }
 
-stl() {
+stol() {
   awk '
   {
     c = length
