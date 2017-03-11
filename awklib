@@ -8,7 +8,7 @@ then
   cat /usr/local/share/stdlib.txt
 elif [ "$1" = -f ]
 then
-  awk -f /usr/local/share/libstd.awk "$@"
+  exec awk -f /usr/local/share/libstd.awk "$@"
 else
-  awk "$(cat /usr/local/share/libstd.awk)$@"
+  exec awk "$(cat /usr/local/share/libstd.awk)$@"
 fi
