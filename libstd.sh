@@ -48,7 +48,7 @@ scope() {
   eval "$(set)" command eval '\"\$@\"'
 }
 
-size() {
+stat_size() {
   ls -ARn "$@" | awk '{z += $5} END {print z}'
 }
 
