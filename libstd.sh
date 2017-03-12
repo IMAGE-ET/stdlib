@@ -6,14 +6,6 @@ ceil() {
   ' "$1"
 }
 
-floor() {
-  awklib '
-  BEGIN {
-    print floor(ARGV[1])
-  }
-  ' "$1"
-}
-
 ltos() {
   awk '
   {
