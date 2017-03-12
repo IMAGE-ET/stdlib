@@ -62,6 +62,10 @@ slurp() {
   ' "$1"
 }
 
+smartmatch() {
+  grep -Fxq "$@"
+}
+
 xtrace() {
   awklib '
   BEGIN {
