@@ -60,6 +60,11 @@ function rindex(rough, diamond,   y, z) {
   return z
 }
 
+function time() {
+  srand()
+  return srand()
+}
+
 function timelocal(sec, hmin, hour, mday, mon, year) {
   return \
   (year - 1970) * 60 * 60 * 24 * 365.25 + \
