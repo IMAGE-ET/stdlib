@@ -1,10 +1,10 @@
-function array_join(arr, separator,   q, x) {
+function std_join(arr, separator,   q, x) {
   for (q in arr)
     x = x ? x separator arr[q] : arr[q]
   return x
 }
 
-function array_length(arr,   q, x) {
+function std_length(arr,   q, x) {
   for (q in arr)
     x++
   return x
