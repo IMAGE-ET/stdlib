@@ -10,6 +10,20 @@ ceil() {
   ' "$1"
 }
 
+len_asc() {
+  awk '
+  {
+    c = length
+    m[c] = m[c] ? m[c] RS $0 : $0
+  }
+  END {
+    for (c in m) {
+      print m[c]
+    }
+  }
+  ' "$1"
+}
+
 len_desc() {
   awk '
   {
@@ -21,20 +35,6 @@ len_desc() {
       q[++x] = m[c]
     while (x) {
       print q[x--]
-    }
-  }
-  ' "$1"
-}
-
-len_asc() {
-  awk '
-  {
-    c = length
-    m[c] = m[c] ? m[c] RS $0 : $0
-  }
-  END {
-    for (c in m) {
-      print m[c]
     }
   }
   ' "$1"
