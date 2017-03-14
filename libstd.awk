@@ -3,7 +3,7 @@ function ceil(x,   y) {
   return y < x ? y + 1 : y
 }
 
-function chr(inte) {
+function std_chr(inte) {
   return sprintf("%c", +inte)
 }
 
@@ -72,7 +72,7 @@ function min(arr,   y, z) {
   return z
 }
 
-function ord(char,   x) {
+function std_ord(char,   x) {
   while (sprintf("%c", ++x) != char);
   return x
 }
@@ -131,7 +131,7 @@ function time() {
   return srand()
 }
 
-function timelocal(sec, hmin, hour, mday, mon, year) {
+function timegm(sec, hmin, hour, mday, mon, year) {
   return \
   (year - 1970) * 60 * 60 * 24 * 365.25 + \
   (mon - 1) * 60 * 60 * 24 * 365.25 / 12 + \
@@ -143,14 +143,14 @@ function timelocal(sec, hmin, hour, mday, mon, year) {
 
 function uri_escape(string,   k, q, z) {
   while (k = substr(string, ++q, 1))
-    z = z (k ~ /[[:alnum:]_.!~*\47()-]/ ? k : "%" sprintf("%02X", ord(k)))
+    z = z (k ~ /[[:alnum:]_.!~*\47()-]/ ? k : "%" sprintf("%02X", std_ord(k)))
   return z
 }
 
 function uri_unescape(string,   k, x, z) {
   while (k = substr(string, ++x, 1))
     if (k == "%") {
-      z = z chr("0x" substr(string, ++x, 2))
+      z = z std_chr("0x" substr(string, ++x, 2))
       ++x
     }
     else {
