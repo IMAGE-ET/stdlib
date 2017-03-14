@@ -15,6 +15,14 @@ function ceil(x,   y) {
   return y < x ? y + 1 : y
 }
 
+function chr(inte) {
+  return sprintf("%c", +inte)
+}
+
+function exists(file) {
+  return getline < file < 0 ? 0 : 1
+}
+
 function floor(x,   y) {
   y = int(x)
   return y > x ? y - 1 : y
@@ -42,61 +50,6 @@ function json(diamond, rough,   x, y, z) {
   }
 }
 
-function mean(arr,   y, z) {
-  for (y in arr)
-    z += arr[y]
-  return z / y
-}
-
-function repeat(str, cnt,   x) {
-  while (cnt--)
-    x = x str
-  return x
-}
-
-function rindex(rough, diamond,   y, z) {
-  while (y = index(substr(rough, z + 1), diamond))
-    z += y
-  return z
-}
-
-function time() {
-  srand()
-  return srand()
-}
-
-function timelocal(sec, hmin, hour, mday, mon, year) {
-  return \
-  (year - 1970) * 60 * 60 * 24 * 365.25 + \
-  (mon - 1) * 60 * 60 * 24 * 365.25 / 12 + \
-  (mday - 1) * 60 * 60 * 24 + \
-  hour * 60 * 60 + \
-  hmin * 60 + \
-  sec
-}
-
-function uri_unescape(string,   k, x, z) {
-  while (k = substr(string, ++x, 1))
-    if (k == "%") {
-      z = z chr("0x" substr(string, ++x, 2))
-      ++x
-    }
-    else {
-      z = z k
-    }
-  return z
-}
-
-function uri_escape(string,   k, q, z) {
-  while (k = substr(string, ++q, 1))
-    z = z (k ~ /[[:alnum:]_.!~*\47()-]/ ? k : "%" sprintf("%02X", ord(k)))
-  return z
-}
-
-function exists(file) {
-  return getline < file < 0 ? 0 : 1
-}
-
 function max(arr,   y, z) {
   for (y in arr)
     if (arr[y] > z) {
@@ -105,16 +58,18 @@ function max(arr,   y, z) {
   return z
 }
 
+function mean(arr,   y, z) {
+  for (y in arr)
+    z += arr[y]
+  return z / y
+}
+
 function min(arr,   y, z) {
   for (y in arr)
     if (!z || arr[y] < z) {
       z = arr[y]
     }
   return z
-}
-
-function chr(inte) {
-  return sprintf("%c", +inte)
 }
 
 function ord(char,   x) {
@@ -129,6 +84,19 @@ function quote(str,   d, m, x, y, z) {
     z = z d x[y] (y < m ? d "\\" d : d)
   return z
 }
+
+function repeat(str, cnt,   x) {
+  while (cnt--)
+    x = x str
+  return x
+}
+
+function rindex(rough, diamond,   y, z) {
+  while (y = index(substr(rough, z + 1), diamond))
+    z += y
+  return z
+}
+
 
 function slice(arr, begin, end,   q, x, z) {
   for (q in arr)
@@ -157,6 +125,39 @@ function strtol(string, base,   xr, ya) {
     ya *= base
   }
   return ya
+}
+
+function time() {
+  srand()
+  return srand()
+}
+
+function timelocal(sec, hmin, hour, mday, mon, year) {
+  return \
+  (year - 1970) * 60 * 60 * 24 * 365.25 + \
+  (mon - 1) * 60 * 60 * 24 * 365.25 / 12 + \
+  (mday - 1) * 60 * 60 * 24 + \
+  hour * 60 * 60 + \
+  hmin * 60 + \
+  sec
+}
+
+function uri_escape(string,   k, q, z) {
+  while (k = substr(string, ++q, 1))
+    z = z (k ~ /[[:alnum:]_.!~*\47()-]/ ? k : "%" sprintf("%02X", ord(k)))
+  return z
+}
+
+function uri_unescape(string,   k, x, z) {
+  while (k = substr(string, ++x, 1))
+    if (k == "%") {
+      z = z chr("0x" substr(string, ++x, 2))
+      ++x
+    }
+    else {
+      z = z k
+    }
+  return z
 }
 
 function wrap(text,   q, y, z) {
