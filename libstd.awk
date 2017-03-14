@@ -115,6 +115,17 @@ function smartmatch(diamond, rough,   x, y) {
   return diamond in y
 }
 
+function str2time(date,   x) {
+  split(date, x, /[-T:Z]/)
+  return \
+  (x[1] - 1970) * 60 * 60 * 24 * 365.25 + \
+  (x[2] - 1) * 60 * 60 * 24 * 365.25 / 12 + \
+  (x[3] - 1) * 60 * 60 * 24 + \
+  x[4] * 60 * 60 + \
+  x[5] * 60 + \
+  x[6]
+}
+
 function strtol(string, base,   xr, ya) {
   while (1) {
     ya += index("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -129,16 +140,6 @@ function strtol(string, base,   xr, ya) {
 function time() {
   srand()
   return srand()
-}
-
-function timegm(sec, hmin, hour, mday, mon, year) {
-  return \
-  (year - 1970) * 60 * 60 * 24 * 365.25 + \
-  (mon - 1) * 60 * 60 * 24 * 365.25 / 12 + \
-  (mday - 1) * 60 * 60 * 24 + \
-  hour * 60 * 60 + \
-  hmin * 60 + \
-  sec
 }
 
 function uri_escape(string,   k, q, z) {
