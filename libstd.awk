@@ -1,15 +1,3 @@
-function std_join(arr, separator,   q, x) {
-  for (q in arr)
-    x = x ? x separator arr[q] : arr[q]
-  return x
-}
-
-function std_length(arr,   q, x) {
-  for (q in arr)
-    x++
-  return x
-}
-
 function ceil(x,   y) {
   y = int(x)
   return y < x ? y + 1 : y
@@ -40,6 +28,12 @@ function insertion_sort(arr,   x, y, z) {
   }
 }
 
+function std_join(arr, separator,   q, x) {
+  for (q in arr)
+    x = x ? x separator arr[q] : arr[q]
+  return x
+}
+
 function json(diamond, rough,   x, y, z) {
   split(rough, x, /\42?, ?\42/)
   for (y in x) {
@@ -48,6 +42,12 @@ function json(diamond, rough,   x, y, z) {
       return z[2]
     }
   }
+}
+
+function std_length(arr,   q, x) {
+  for (q in arr)
+    x++
+  return x
 }
 
 function max(arr,   y, z) {
@@ -96,7 +96,6 @@ function rindex(rough, diamond,   y, z) {
     z += y
   return z
 }
-
 
 function slice(arr, begin, end,   q, x, z) {
   for (q in arr)
