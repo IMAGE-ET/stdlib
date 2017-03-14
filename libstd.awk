@@ -115,7 +115,7 @@ function smartmatch(diamond, rough,   x, y) {
   return diamond in y
 }
 
-function str2time(date,   x) {
+function strtotime(date,   x) {
   split(date, x, /[-T:Z]/)
   return \
   (x[1] - 1970) * 60 * 60 * 24 * 365.25 + \
