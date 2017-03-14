@@ -1,7 +1,3 @@
-std_size() {
-  ls -ARn "$@" | awk '{z += $5} END {print z}'
-}
-
 ceil() {
   awklib '
   BEGIN {
@@ -42,6 +38,10 @@ len_desc() {
 
 scope() {
   eval "$(set)" command eval '\"\$@\"'
+}
+
+std_size() {
+  ls -ARn "$@" | awk '{z += $5} END {print z}'
 }
 
 slurp() {
