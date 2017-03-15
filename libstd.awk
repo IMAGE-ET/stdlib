@@ -16,6 +16,15 @@ function floor(x,   y) {
   return y > x ? y - 1 : y
 }
 
+function html_attr(attr, elem,   x, z) {
+  split(elem, x, /[ =\42]+/)
+  for (z in x)
+    if (x[z] == attr) {
+      break
+    }
+  return x[++z]
+}
+
 function insertion_sort(arr,   x, y, z) {
   for (x in arr) {
     y = arr[x]
