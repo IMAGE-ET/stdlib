@@ -17,9 +17,9 @@ function floor(x,   y) {
 }
 
 function html_attr(attr, elem,   x, z) {
-  split(elem, x, /[ =\42]+/)
+  split(elem, x, "\42")
   for (z in x) {
-    if (x[z] == attr) {
+    if (z % 2 && x[z] ~ " " attr "=") {
       return x[++z]
     }
   }
