@@ -61,6 +61,7 @@ smartmatch() {
 xtrace() {
   awklib '
   BEGIN {
+    delete ARGV[0]
     xtrace(ARGV)
   }
   ' "$@"

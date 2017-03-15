@@ -180,7 +180,7 @@ function wrap(text,   q, y, z) {
 
 function xtrace(arr,   b, d, k, q, w, z) {
   b = "\47"
-  while (++d in arr) {
+  for (d in arr) {
     k = split(arr[d], q, b)
     q[1]
     if (d - 1)
