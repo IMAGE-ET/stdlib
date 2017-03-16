@@ -163,6 +163,10 @@ function time_day(x) {
   return x * 60 * 60 * 24
 }
 
+function time_mon(x) {
+  return x * 60 * 60 * 24 * 365.25 / 12
+}
+
 function time_year(x) {
   return x * 60 * 60 * 24 * 365.25
 }
