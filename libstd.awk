@@ -151,6 +151,22 @@ function time() {
   return srand()
 }
 
+function time_min(sec) {
+  return sec * 60
+}
+
+function time_hour(sec) {
+  return sec * 60 * 60
+}
+
+function time_day(sec) {
+  return sec * 60 * 60 * 24
+}
+
+function time_year(sec) {
+  return sec * 60 * 60 * 24 * 365.25
+}
+
 function uri_escape(string,   k, q, z) {
   while (k = substr(string, ++q, 1))
     z = z (k ~ /[[:alnum:]_.!~*\47()-]/ ? k : "%" sprintf("%02X", std_ord(k)))
