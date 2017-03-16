@@ -58,6 +58,10 @@ smartmatch() {
   grep -Fxq "$@"
 }
 
+wrap() {
+  fold -s80 "$@"
+}
+
 xtrace() {
   awklib '
   BEGIN {
