@@ -151,20 +151,20 @@ function time() {
   return srand()
 }
 
-function time_min(sec) {
-  return sec * 60
+function time_min(x) {
+  return x * 60
 }
 
-function time_hour(sec) {
-  return sec * 60 * 60
+function time_hour(x) {
+  return x * 60 * 60
 }
 
-function time_day(sec) {
-  return sec * 60 * 60 * 24
+function time_day(x) {
+  return x * 60 * 60 * 24
 }
 
-function time_year(sec) {
-  return sec * 60 * 60 * 24 * 365.25
+function time_year(x) {
+  return x * 60 * 60 * 24 * 365.25
 }
 
 function uri_escape(string,   k, q, z) {
