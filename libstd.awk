@@ -127,11 +127,11 @@ function smartmatch(diamond, rough,   x, y) {
 function strtotime(date,   x) {
   split(date, x, /[-T:Z]/)
   return \
-  (x[1] - 1970) * 60 * 60 * 24 * 365.25 + \
-  (x[2] - 1) * 60 * 60 * 24 * 365.25 / 12 + \
-  (x[3] - 1) * 60 * 60 * 24 + \
-  x[4] * 60 * 60 + \
-  x[5] * 60 + \
+  time_year(x[1] - 1970) + \
+  time_mon(x[2] - 1) + \
+  time_day(x[3] - 1) + \
+  time_hour(x[4]) + \
+  time_min(x[5]) + \
   x[6]
 }
 
