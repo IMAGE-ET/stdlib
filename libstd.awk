@@ -158,25 +158,25 @@ function time() {
 }
 
 function time_day(x) {
-  return x * 60 * 60 * 24
+  return 24 * time_hour(x)
 }
 
 function time_hour(x) {
-  return x * 60 * 60
+  return 60 * time_min(x)
 }
 
 function time_min(x) {
-  return x * 60
+  return 60 * x
 }
 
 function time_mon(x,   y) {
   split("31 28 31 30 31 30 31 31 30 31 30 31", y)
   slice(y, 1, ++x)
-  return sum(y) * 60 * 60 * 24
+  return sum(y) * time_day(1)
 }
 
 function time_year(x) {
-  return x * 60 * 60 * 24 * 365.25
+  return 365.25 * time_day(x)
 }
 
 function uri_escape(string,   k, q, z) {
