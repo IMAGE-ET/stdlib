@@ -1,6 +1,6 @@
 StdLib
 ======
-POSIX standard library for Awk and shell scripts
+POSIX standard library for Awk and shell
 
 Awk command line examples
 -------------------------
