@@ -108,7 +108,7 @@ function rindex(rough, diamond,   y, z) {
 
 function slice(arr, begin, end,   q, x, z) {
   for (q in arr)
-    if (q >= begin && (!end || q < end)) {
+    if (q >= begin && (!end || +q < end)) {
       x[q] = arr[q]
     }
   delete arr
@@ -124,11 +124,13 @@ function smartmatch(diamond, rough,   x, y) {
   return diamond in y
 }
 
-function strtotime(date,   x) {
+function strtotime(date,   x, q) {
   split(date, x, /[-T:Z]/)
+  split("31 28 31 30 31 30 31 31 30 31 30 31", q)
+  slice(q, 1, x[2])
   return \
   time_year(x[1] - 1970) + \
-  time_mon(x[2] - 1) + \
+  time_day(sum(q)) + \
   time_day(x[3] - 1) + \
   time_hour(x[4]) + \
   time_min(x[5]) + \
@@ -167,10 +169,6 @@ function time_hour(x) {
 
 function time_day(x) {
   return x * 60 * 60 * 24
-}
-
-function time_mon(x) {
-  return x * 60 * 60 * 24 * 365.25 / 12
 }
 
 function time_year(x) {
