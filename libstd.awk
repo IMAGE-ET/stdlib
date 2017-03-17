@@ -146,6 +146,12 @@ function strtol(string, base,   xr, ya) {
   return ya
 }
 
+function sum(arr,   x, y) {
+  for (x in arr)
+    y += arr[x]
+  return y
+}
+
 function time() {
   srand()
   return srand()
