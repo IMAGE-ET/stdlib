@@ -126,11 +126,9 @@ function smartmatch(diamond, rough,   x, y) {
 
 function strtotime(date,   x, q) {
   split(date, x, /[-T:Z]/)
-  split("31 28 31 30 31 30 31 31 30 31 30 31", q)
-  slice(q, 1, x[2])
   return \
   time_year(x[1] - 1970) + \
-  time_day(sum(q)) + \
+  time_mon(x[2] - 1) + \
   time_day(x[3] - 1) + \
   time_hour(x[4]) + \
   time_min(x[5]) + \
@@ -169,6 +167,12 @@ function time_hour(x) {
 
 function time_day(x) {
   return x * 60 * 60 * 24
+}
+
+function time_mon(x,   y) {
+  split("31 28 31 30 31 30 31 31 30 31 30 31", y)
+  slice(y, 1, ++x)
+  return sum(y) * 60 * 60 * 24
 }
 
 function time_year(x) {
