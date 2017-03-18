@@ -108,7 +108,7 @@ function rindex(rough, diamond,   y, z) {
 
 function slice(arr, begin, end,   q, x, z) {
   for (q in arr)
-    if (q >= begin && (!end || +q < end)) {
+    if (+q >= begin && (!end || +q < end)) {
       x[q] = arr[q]
     }
   delete arr
