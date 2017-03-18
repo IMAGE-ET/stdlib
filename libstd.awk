@@ -135,7 +135,7 @@ function strtol(string, base,   xr, ya) {
   return ya
 }
 
-function strtotime(date,   x, q) {
+function strtotime(date,   x) {
   split(date, x, /[-T:Z]/)
   return \
   time_year(x[1] - 1970) + \
@@ -175,8 +175,10 @@ function time_mon(x,   y) {
   return sum(y) * time_day(1)
 }
 
-function time_year(x) {
-  return 365.25 * time_day(x)
+function time_year(x,   q) {
+  split("365 365 366", q)
+  slice(q, 1, x % 4 + 1)
+  return ((x - x % 4) * 365.25 + sum(q)) * time_day(1)
 }
 
 function uri_escape(string,   k, q, z) {
