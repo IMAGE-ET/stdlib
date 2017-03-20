@@ -36,6 +36,10 @@ len_desc() {
   ' "$1"
 }
 
+newer() {
+  find "$2" -newer "$1" -exec false {} +
+}
+
 scope() {
   eval "$(set)" command eval '\"\$@\"'
 }
