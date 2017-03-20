@@ -37,7 +37,12 @@ len_desc() {
 }
 
 newer() {
-  find "$2" -newer "$1" -exec false {} +
+  if [ ! -f "$1" ]
+  then return 1
+  elif [ ! -f "$2" ]
+  then return 0
+  else find "$2" -newer "$1" -exec false {} +
+  fi
 }
 
 scope() {
