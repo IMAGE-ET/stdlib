@@ -1,5 +1,7 @@
+LIBAWK=$(cat /usr/local/share/libstd.awk)
+
 ceil() {
-  awklib '
+  awk "$LIBAWK"'
   BEGIN {
     print ceil(ARGV[1])
   }
@@ -72,7 +74,7 @@ wrap() {
 }
 
 xtrace() {
-  awklib '
+  awk "$LIBAWK"'
   BEGIN {
     delete ARGV[0]
     xtrace(ARGV)

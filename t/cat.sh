@@ -9,11 +9,11 @@ awklib 'BEGIN{print ceil(2.1)}'
 eof
 strace dash "$z" | wc -l
 cat > "$z" <<'eof'
-STDLIB=$(cat /usr/local/share/libstd.awk)
-awk "$STDLIB"'BEGIN{print ceil(2.1)}'
-awk "$STDLIB"'BEGIN{print ceil(2.1)}'
-awk "$STDLIB"'BEGIN{print ceil(2.1)}'
-awk "$STDLIB"'BEGIN{print ceil(2.1)}'
-awk "$STDLIB"'BEGIN{print ceil(2.1)}'
+LIBAWK=$(cat /usr/local/share/libstd.awk)
+awk "$LIBAWK"'BEGIN{print ceil(2.1)}'
+awk "$LIBAWK"'BEGIN{print ceil(2.1)}'
+awk "$LIBAWK"'BEGIN{print ceil(2.1)}'
+awk "$LIBAWK"'BEGIN{print ceil(2.1)}'
+awk "$LIBAWK"'BEGIN{print ceil(2.1)}'
 eof
 strace dash "$z" | wc -l
