@@ -69,6 +69,14 @@ smartmatch() {
   grep -Fxq "$@"
 }
 
+uri_escape() {
+  awk "$LIBAWK"'
+  BEGIN {
+    print uri_escape(ARGV[1])
+  }
+  ' "$1"
+}
+
 wrap() {
   fold -s80 "$@"
 }
