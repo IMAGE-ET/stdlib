@@ -1,5 +1,5 @@
 function abs(x) {
-  return x < 0 ? -x : x
+  return +x < 0 ? -x : x
 }
 
 function ceil(x,   y) {
