@@ -80,7 +80,7 @@ function mean(arr,   y, z) {
 function min(arr,   y, z) {
   for (y in arr)
     if (!z || arr[y] < z) {
-      z = arr[y]
+      z = +arr[y]
     }
   return z
 }
