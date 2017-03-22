@@ -1,3 +1,7 @@
+function abs(x) {
+  return x < 0 ? -x : x
+}
+
 function ceil(x,   y) {
   y = int(x)
   return y < x ? y + 1 : y
