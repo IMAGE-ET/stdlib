@@ -185,6 +185,13 @@ function time_year(x,   q) {
   return ((x - x % 4) * 365.25 + sum(q)) * time_day(1)
 }
 
+function tobinary(x,   y) {
+  do
+    y = x % 2 ? 1 y : 0 y
+  while (x = int(x / 2))
+  return y
+}
+
 function uri_escape(string,   k, q, z) {
   while (k = substr(string, ++q, 1))
     z = z (k ~ /[[:alnum:]_.!~*\47()-]/ ? k : "%" sprintf("%02X", std_ord(k)))
