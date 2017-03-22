@@ -140,7 +140,7 @@ function strtol(string, base,   xr, ya) {
 }
 
 function strtotime(date,   x) {
-  split(date, x, /[-T:Z]/)
+  split(date, x, "[ /:TZ-]")
   return \
   time_year(x[1] - 1970) + \
   time_mon(x[2] - 1) + \
