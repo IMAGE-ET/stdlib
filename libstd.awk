@@ -66,7 +66,7 @@ function std_length(arr,   q, x) {
 function max(arr,   y, z) {
   for (y in arr)
     if (arr[y] > z) {
-      z = arr[y]
+      z = +arr[y]
     }
   return z
 }
