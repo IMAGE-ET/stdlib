@@ -175,7 +175,7 @@ function time_min(x) {
 function time_year_mon(ydiff, mdiff,   q, x) {
   split("365 365 366", q)
   split("31 28 31 30 31 30 31 31 30 31 30 31", x)
-  if ((ydiff + 2) % 4 == 0)
+  if (ydiff % 4 == 2)
     x[2]++
   slice(q, 1, ydiff % 4 + 1)
   slice(x, 1, mdiff + 1)
