@@ -178,7 +178,7 @@ function time_year_mon(ydiff, mdiff,   q, x) {
   if ((ydiff + 2) % 4 == 0)
     x[2]++
   slice(q, 1, ydiff % 4 + 1)
-  slice(x, 1, ++mdiff)
+  slice(x, 1, mdiff + 1)
   return ((ydiff - ydiff % 4) * 365.25 + sum(q) + sum(x)) * time_day(1)
 }
 
