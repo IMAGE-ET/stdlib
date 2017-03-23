@@ -142,8 +142,7 @@ function strtol(string, base,   xr, ya) {
 function strtotime(date,   x) {
   split(date, x, "[ /:TZ-]")
   return \
-  time_year(x[1] - 1970) + \
-  time_mon(x[2] - 1) + \
+  time_year_mon(x[1] - 1970, x[2] - 1) + \
   time_day(x[3] - 1) + \
   time_hour(x[4]) + \
   time_min(x[5]) + \
@@ -173,16 +172,14 @@ function time_min(x) {
   return 60 * x
 }
 
-function time_mon(x,   y) {
-  split("31 28 31 30 31 30 31 31 30 31 30 31", y)
-  slice(y, 1, ++x)
-  return sum(y) * time_day(1)
-}
-
-function time_year(x,   q) {
+function time_year_mon(ydiff, mdiff,   q, x) {
   split("365 365 366", q)
-  slice(q, 1, x % 4 + 1)
-  return ((x - x % 4) * 365.25 + sum(q)) * time_day(1)
+  split("31 28 31 30 31 30 31 31 30 31 30 31", x)
+  if ((ydiff + 2) % 4 == 0)
+    x[2]++
+  slice(q, 1, ydiff % 4 + 1)
+  slice(x, 1, ++mdiff)
+  return ((ydiff - ydiff % 4) * 365.25 + sum(q) + sum(x)) * time_day(1)
 }
 
 function tobinary(x,   y) {
