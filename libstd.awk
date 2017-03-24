@@ -151,9 +151,11 @@ function strtotime(date,   x) {
   x[6]
 }
 
-function sum(arr,   x, y) {
+function sum(arr, first, last,   x, y) {
   for (x in arr)
-    y += arr[x]
+    if (+x >= +first && (!last || +x <= +last)) {
+      y += arr[x]
+    }
   return y
 }
 
