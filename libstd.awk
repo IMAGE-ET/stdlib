@@ -41,9 +41,11 @@ function insertion_sort(arr,   x, y, z) {
   }
 }
 
-function std_join(arr, separator,   q, x) {
+function std_join(arr, sep, first, last,   q, x) {
   for (q in arr)
-    x = x ? x separator arr[q] : arr[q]
+    if (q >= first && (!last || q <= last)) {
+      x = x ? x sep arr[q] : arr[q]
+    }
   return x
 }
 
