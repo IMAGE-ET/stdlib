@@ -24,4 +24,11 @@ BEGIN {
   print
   print "should be 222:333"
   print std_join(x, ":", 2, 3)
+  print
+  split("1 2 3 4 5 6 7 8 9 A B C", x)
+  print "should be A:B:C"
+  print std_join(x, ":", "0xA")
+  print
+  print "should be A:B"
+  print std_join(x, ":", "0xA", "0xB")
 }
