@@ -7,6 +7,10 @@ function ceil(x,   y) {
   return y < x ? y + 1 : y
 }
 
+function trunc(x) {
+  return int(x)
+}
+
 function std_chr(inte) {
   return sprintf("%c", +inte)
 }
