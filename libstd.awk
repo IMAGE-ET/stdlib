@@ -7,10 +7,6 @@ function ceil(x,   y) {
   return y < x ? y + 1 : y
 }
 
-function trunc(x) {
-  return int(x)
-}
-
 function std_chr(inte) {
   return sprintf("%c", +inte)
 }
@@ -195,6 +191,10 @@ function tobinary(x,   y) {
     y = x % 2 ? 1 y : 0 y
   while (x = int(x / 2))
   return y
+}
+
+function trunc(x) {
+  return int(x)
 }
 
 function uri_escape(string,   k, q, z) {
