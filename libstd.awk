@@ -100,6 +100,14 @@ function quote(str,   d, m, x, y, z) {
   return z
 }
 
+function range(arr, first, last,   x, y) {
+  for (x = first; x <= last; x++) {
+    arr[x]
+    y++
+  }
+  return y
+}
+
 function repeat(str, cnt,   x) {
   while (cnt--)
     x = x str
