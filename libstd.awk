@@ -201,13 +201,6 @@ function time_year_mon(ydiff, mdiff,   q, x) {
   return ((ydiff - ydiff % 4) * 365.25 + sum(q) + sum(x)) * time_day(1)
 }
 
-function tobinary(x,   y) {
-  do
-    y = x % 2 ? 1 y : 0 y
-  while (x = int(x / 2))
-  return y
-}
-
 function trunc(x) {
   return int(x)
 }
