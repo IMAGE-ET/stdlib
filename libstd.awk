@@ -156,17 +156,6 @@ function smartmatch(diamond, rough,   x, y) {
   return diamond in y
 }
 
-function strtol(string, base,   xr, ya) {
-  while (1) {
-    ya += index("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-      substr(string, ++xr, 1)) - 1
-    if (xr == length(string))
-      break
-    ya *= base
-  }
-  return ya
-}
-
 function strtotime(date,   x) {
   split(date, x, "[ /:TZ-]")
   return \
