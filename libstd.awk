@@ -2,6 +2,24 @@ function abs(x) {
   return +x < 0 ? -x : x
 }
 
+function base_convert(num, fromb, tob,   q, y, z) {
+  if (fromb < 2 || fromb > 36 || tob < 2 || tob > 36)
+    return -1
+  q = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  do {
+    y = index(substr(q, 1, fromb), substr(num, 1, 1))
+    if (!y)
+      continue
+    z = z * fromb + y - 1
+  }
+  while (num = substr(num, 2))
+  y = ""
+  do
+    y = substr(q, z % tob + 1, 1) y
+  while (z = int(z / tob))
+  return y
+}
+
 function ceil(x,   y) {
   y = int(x)
   return y < x ? y + 1 : y
