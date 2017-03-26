@@ -12,14 +12,7 @@ BEGIN {
   print
   print "should be 50"
   print sum(x, 2, 3)
-  print
-  split("1 2 3 4 5 6 7 8 9 10 11 12", x)
-  print "should be 66"
-  print sum(x, "", "0xB")
-  print
-  print "should be 33"
-  print sum(x, "0xA")
-  print
-  print "should be 21"
-  print sum(x, "0xA", "0xB")
+  print sum(x, 2, "3")
+  print sum(x, "2", 3)
+  print sum(x, "2", "3")
 }

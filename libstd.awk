@@ -86,7 +86,7 @@ function std_length(arr,   q, x) {
 function max(arr,   y, z) {
   for (y in arr)
     if (arr[y] > z) {
-      z = +arr[y]
+      z = arr[y]
     }
   return z
 }
@@ -100,7 +100,7 @@ function mean(arr,   y, z) {
 function min(arr,   y, z) {
   for (y in arr)
     if (!z || arr[y] < z) {
-      z = +arr[y]
+      z = arr[y]
     }
   return z
 }
@@ -179,7 +179,7 @@ function strtotime(date,   x) {
 
 function sum(arr, first, last,   x, y) {
   for (x in arr)
-    if (+x >= +first && (!last || +x <= +last)) {
+    if (x >= first && (!last || x <= last)) {
       y += arr[x]
     }
   return y
