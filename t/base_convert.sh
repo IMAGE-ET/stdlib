@@ -122,3 +122,28 @@ echo
 yellow 'tobase = invalid character'
 php -r 'echo base_convert(11, 10, "1,6");'
 awklib 'BEGIN {print base_convert(11, 10, "1,6")}'
+echo
+
+yellow 'string number'
+php -r 'echo base_convert(11, 10, 16) . "\n";'
+awklib 'BEGIN {print base_convert("11", 10, 16)}'
+echo
+
+yellow 'string frombase low'
+php -r 'echo base_convert(11, 10, 8) . "\n";'
+awklib 'BEGIN {print base_convert(11, "10", 8)}'
+echo
+
+yellow 'string frombase high'
+php -r 'echo base_convert(11, 8, 10) . "\n";'
+awklib 'BEGIN {print base_convert(11, "8", 10)}'
+echo
+
+yellow 'string tobase low'
+php -r 'echo base_convert(11, 8, 10) . "\n";'
+awklib 'BEGIN {print base_convert(11, 8, "10")}'
+echo
+
+yellow 'string tobase high'
+php -r 'echo base_convert(11, 10, 8) . "\n";'
+awklib 'BEGIN {print base_convert(11, 10, "8")}'
