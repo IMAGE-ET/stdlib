@@ -3,7 +3,7 @@ function abs(x) {
 }
 
 function base_convert(num, fromb, tob,   q, y, z) {
-  if (+fromb < 2 || +fromb > 36 || +tob < 2 || +tob > 36)
+  if (fromb < 2 || fromb > 36 || tob < 2 || tob > 36)
     return -1
   q = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   do {

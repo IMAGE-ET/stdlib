@@ -57,11 +57,6 @@ yellow 'dec -> bin'
 base_convert 11 10 2
 echo
 
-yellow 'string addition'
-php -r 'echo base_convert("A", 16, 10) + base_convert("B", 16, 10) . "\n";'
-awklib 'BEGIN {print base_convert("A", 16, 10) + base_convert("B", 16, 10)}'
-echo
-
 yellow 'number = null'
 php -r 'echo base_convert(NULL, 10, 16) . "\n";'
 php -r 'echo base_convert("", 10, 16) . "\n";'
@@ -122,28 +117,3 @@ echo
 yellow 'tobase = invalid character'
 php -r 'echo base_convert(11, 10, "1,6");'
 awklib 'BEGIN {print base_convert(11, 10, "1,6")}'
-echo
-
-yellow 'string number'
-php -r 'echo base_convert(11, 10, 16) . "\n";'
-awklib 'BEGIN {print base_convert("11", 10, 16)}'
-echo
-
-yellow 'string frombase low'
-php -r 'echo base_convert(11, 10, 8) . "\n";'
-awklib 'BEGIN {print base_convert(11, "10", 8)}'
-echo
-
-yellow 'string frombase high'
-php -r 'echo base_convert(11, 8, 10) . "\n";'
-awklib 'BEGIN {print base_convert(11, "8", 10)}'
-echo
-
-yellow 'string tobase low'
-php -r 'echo base_convert(11, 8, 10) . "\n";'
-awklib 'BEGIN {print base_convert(11, 8, "10")}'
-echo
-
-yellow 'string tobase high'
-php -r 'echo base_convert(11, 10, 8) . "\n";'
-awklib 'BEGIN {print base_convert(11, 10, "8")}'
