@@ -20,13 +20,13 @@ function base_convert(num, fromb, tob,   q, y, z) {
   return y
 }
 
-function ceil(x,   y) {
-  y = int(x)
-  return y < x ? y + 1 : y
+function ceil(num,   x) {
+  x = int(num)
+  return x < +num ? x + 1 : x
 }
 
-function std_chr(inte) {
-  return sprintf("%c", +inte)
+function std_chr(num) {
+  return sprintf("%c", +num)
 }
 
 function exists(file) {
