@@ -33,9 +33,9 @@ function exists(file) {
   return getline < file < 0 ? 0 : 1
 }
 
-function floor(x,   y) {
-  y = int(x)
-  return y > x ? y - 1 : y
+function floor(num,   x) {
+  x = int(num)
+  return x > +num ? x - 1 : x
 }
 
 function html_attr(attr, elem,   x, z) {
